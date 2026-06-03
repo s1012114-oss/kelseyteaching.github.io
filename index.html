@@ -13,20 +13,24 @@
             font-family: "Microsoft JhengHei", sans-serif;
         }
 
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+        html {
+            scroll-behavior: smooth; /* 讓選單跳轉時有平滑滾動效果 */
         }
 
-        /* 固定在頂部的導覽列 */
+        body {
+            line-height: 1.6;
+            color: #4a3e3d; /* 深木質咖，比純黑更柔和 */
+            background-color: #fcfbfa; /* 暖白偏燕麥色 */
+        }
+
+        /* 固定在頂部的導覽列 (大地色系：深胡桃木棕) */
         header {
-            background-color: #2c3e50;
+            background-color: #5c4033; 
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(92, 64, 51, 0.15);
         }
 
         nav {
@@ -39,9 +43,10 @@
         }
 
         nav .logo {
-            color: #fff;
+            color: #f4f0ea; /* 杏仁白 */
             font-size: 1.2rem;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
         nav ul {
@@ -50,55 +55,34 @@
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         nav ul li a {
-            color: #ddd;
+            color: #d7ccc8; /* 淺可可色 */
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #1abc9c;
+            color: #e6a15c; /* 溫暖秋葉橘 */
         }
 
         /* 區塊通用樣式 */
         section {
-            padding: 100px 20px 60px 20px; /* 留出頂部導覽列的空間 */
+            padding: 120px 20px 80px 20px; /* 增加頂部間距，防止標題被導覽列遮擋 */
             max-width: 1000px;
             margin: 0 auto;
-            min-height: 80vh;
+            min-height: 85vh;
         }
 
         h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #1abc9c;
+            color: #5c4033;
+            border-bottom: 3px solid #d4a373; /* 焦糖金色底線 */
             padding-bottom: 10px;
             margin-bottom: 30px;
-        }
-
-        /* 首頁/關於我 樣式 */
-        .hero {
-            text-align: center;
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #bdc3c7;
+            font-size: 1.8rem;
         }
 
         /* 教材卡片排版 */
@@ -106,45 +90,69 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .card {
             background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid #1abc9c;
+            padding: 30px;
+            border-radius: 12px; /* 稍微圓潤一點更有親和力 */
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.08); /* 帶有大地色調的柔和陰影 */
+            border-top: 5px solid #d4a373; /* 卡片上方焦糖金邊條 */
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* 滑鼠懸停時微幅飄起 */
         }
 
         .card h3 {
             margin-bottom: 15px;
-            color: #34495e;
+            color: #6d4c41; /* 摩卡棕 */
         }
 
-        /* 按鈕樣式 */
+        .card p {
+            font-size: 0.95rem;
+            color: #5d534e;
+            margin-bottom: 8px;
+        }
+
+        /* 按鈕樣式 (大地色系：秋葉橘與泥土棕) */
         .btn {
             display: inline-block;
-            background-color: #1abc9c;
+            background-color: #e6a15c; /* 主按鈕：溫暖秋葉橘 */
             color: white;
-            padding: 8px 15px;
+            padding: 9px 18px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             margin-top: 15px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
             transition: background 0.3s;
         }
 
         .btn:hover {
-            background-color: #16a085;
+            background-color: #cf8642;
+        }
+
+        /* 次要按鈕樣式 */
+        .btn-secondary {
+            background-color: #8d7b70; /* 次按鈕：亞麻灰棕 */
+        }
+
+        .btn-secondary:hover {
+            background-color: #726257;
         }
 
         /* 頁尾 */
         footer {
-            background-color: #2c3e50;
-            color: #bdc3c7;
+            background-color: #4a3e3d;
+            color: #d7ccc8;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -153,7 +161,7 @@
     <!-- 頂部選單 -->
     <header>
         <nav>
-            <div class="logo"> 教材存放處 </div>
+            <div class="logo"> 💼 周一婷的教學檔案存放處</div>
             <ul>
                 <li><a href="#teaching">教學演示</a></li>
                 <li><a href="#curriculum">課程設計</a></li>
@@ -162,7 +170,7 @@
     </header>
     
     <!-- 區塊一：教學演示 -->
-    <section id="teaching" style="background-color: #f0f3f4;">
+    <section id="teaching" style="background-color: #f4f0ea;"> <!-- 燕麥暖色背景 -->
         <h2>教學演示 (試教教材)</h2>
         <p>評審委員您好，以下為本次準備之教學演示相關檔案，點擊按鈕可直接檢視或下載。</p>
         
@@ -173,7 +181,7 @@
                 <p><strong>教學對象：</strong>國中八年級 / 國小五年級</p>
                 <p><strong>教學亮點：</strong>融入 ORID 啟發式提問、素養導向學習單設計。</p>
                 <a href="您的雲端教案連結" target="_blank" class="btn">📄 檢視完整教案</a>
-                <a href="您的簡報連結" target="_blank" class="btn" style="background-color: #34495e;">📊 教學簡報</a>
+                <a href="您的簡報連結" target="_blank" class="btn btn-secondary">📊 教學簡報</a>
             </div>
             <!-- 卡片 2 -->
             <div class="card">
@@ -185,7 +193,7 @@
         </div>
     </section>
 
-    <!-- 區塊三：課程設計 -->
+    <!-- 區塊二：課程設計 -->
     <section id="curriculum">
         <h2>多元課程設計成果</h2>
         <p>此區塊可放置您過去設計過的優良課程方案、學習單或學生優良作品集。</p>
