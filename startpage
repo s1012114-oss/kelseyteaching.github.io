@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教師甄試教學檔案 | 您的名字</title>
+    <style>
+        /* 基本樣式設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* 固定在頂部的導覽列 */
+        header {
+            background-color: #2c3e50;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* 區塊通用樣式 */
+        section {
+            padding: 100px 20px 60px 20px; /* 留出頂部導覽列的空間 */
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* 首頁/關於我 樣式 */
+        .hero {
+            text-align: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+        }
+
+        /* 教材卡片排版 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #1abc9c;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #34495e;
+        }
+
+        /* 按鈕樣式 */
+        .btn {
+            display: inline-block;
+            background-color: #1abc9c;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #16a085;
+        }
+
+        /* 頁尾 */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部選單 -->
+    <header>
+        <nav>
+            <div class="logo">👑 115學年度 教師甄試教學檔案</div>
+            <ul>
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#teaching">教學演示</a></li>
+                <li><a href="#curriculum">課程設計</a></li>
+                <li><a href="#management">班級經營</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 區塊一：關於我 -->
+    <section id="about">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2>關於我 ＆ 教育理念</h2>
+        </div>
+        <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <p><strong>大家好，我是 [您的名字]。</strong></p>
+            <p style="margin-top: 15px;">
+                這裡寫上一段簡短但有力的自我介紹。例如：深信「每位孩子都有發光的時刻」，專長於素養導向教學與數位科技融入課堂。擁有 X 年的代理/實習經驗，致力於引導學生從生活中發現知識...
+            </p>
+            <blockquote style="margin-top: 20px; padding-left: 15px; border-left: 4px solid #1abc9c; color: #7f8c8d; font-style: italic;">
+                "教育不是灌滿一桶水，而是點燃一把火。"
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- 區塊二：教學演示 -->
+    <section id="teaching" style="background-color: #f0f3f4;">
+        <h2>教學演示 (試教教材)</h2>
+        <p>評審委員您好，以下為本次準備之教學演示相關檔案，點擊按鈕可直接檢視或下載。</p>
+        
+        <div class="card-container">
+            <!-- 卡片 1 -->
+            <div class="card">
+                <h3>單元一：[課綱單元名稱]</h3>
+                <p><strong>教學對象：</strong>國中八年級 / 國小五年級</p>
+                <p><strong>教學亮點：</strong>融入 ORID 啟發式提問、素養導向學習單設計。</p>
+                <a href="您的雲端教案連結" target="_blank" class="btn">📄 檢視完整教案</a>
+                <a href="您的簡報連結" target="_blank" class="btn" style="background-color: #34495e;">📊 教學簡報</a>
+            </div>
+            <!-- 卡片 2 -->
+            <div class="card">
+                <h3>單元二：[跨領域/選修單元名稱]</h3>
+                <p><strong>教學對象：</strong>高中一年級</p>
+                <p><strong>教學亮點：</strong>結合探究與實作，引導學生自主學習。</p>
+                <a href="您的雲端教案連結" target="_blank" class="btn">📄 檢視完整教案</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 區塊三：課程設計 -->
+    <section id="curriculum">
+        <h2>多元課程設計成果</h2>
+        <p>此區塊可放置您過去設計過的優良課程方案、學習單或學生優良作品集。</p>
+        
+        <div class="card-container">
+            <div class="card">
+                <h3>學習單與評量工具</h3>
+                <p>設計符合雙向細目表之評量，以及引導學生思考的鷹架學習單。</p>
+                <a href="#" class="btn">👁️ 瀏覽作品集</a>
+            </div>
+            <div class="card">
+                <h3>跨領域主題課程</h3>
+                <p>協同他科老師共同開發之素養課程，榮獲 [某某獎項] 或公開授課好評。</p>
+                <a href="#" class="btn">👁️ 瀏覽課程架構</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 區塊四：班級經營 -->
+    <section id="management" style="background-color: #f0f3f4;">
+        <h2>班級經營策略</h2>
+        <p>展現您的正向管教、親師溝通、常規建立等實務經驗。</p>
+        <div class="card" style="margin-top: 20px;">
+            <h3>我的班級經營三部曲</h3>
+            <p>1. <strong>常規建立：</strong>運用圖卡與正向獎勵，快速凝聚班級常規。</p>
+            <p>2. <strong>親師溝通：</strong>定期建立班級通訊、善用數位工具讓家長安心放心。</p>
+            <p>3. <strong>輔導案例：</strong>針對特殊生及適應困難學生的個別化輔導成功案例（去識別化）。</p>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>© 2026 [您的名字] 的教師甄試教學檔案. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
