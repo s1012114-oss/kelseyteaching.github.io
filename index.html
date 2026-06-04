@@ -6,7 +6,6 @@
     <title>教學檔案 | 周一婷</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap">
     <style>
-        /* 引入不依賴第三方載入太慢時的替代圓體宣告 */
         @import url('https://fonts.googleapis.com/css2?family=Chukuai&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
 
         /* 基本樣式設定 */
@@ -14,21 +13,110 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            /* 優先套用源全圓體/隨選圓體風格，無縫支援各平台 */
             font-family: "GenWanMin", "Open Huninn", "M PLUS Rounded 1c", "PingFang TC", "Microsoft JhengHei", sans-serif;
         }
 
         html {
-            scroll-behavior: smooth; /* 讓選單跳轉時有平滑滾動效果 */
+            scroll-behavior: smooth;
         }
 
         body {
             line-height: 1.6;
-            color: #6e473b; /* 煙燻褐作為主要文字色 */
-            background-color: #ffffff; /* 主背景採用白色 */
+            color: #6e473b; /* 煙燻褐 */
+            background-color: #ffffff;
+            overflow-x: hidden;
         }
 
-        /* 固定在頂部的導覽列 */
+        /* ----------------------------------
+           ✨ 全新歡迎主頁樣式 (Landing Page)
+        ------------------------------------- */
+        .welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            /* 採用溫潤的杏奶色到暖褐色的高質感漸層 */
+            background: linear-gradient(135deg, #f5efe6 0%, #e1d4c2 50%, #a78d78 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000; /* 確保蓋在最上層 */
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 當點擊進入後，主頁向上滑出並淡出 */
+        .welcome-screen.hide {
+            transform: translateY(-100vh);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-title {
+            color: #6e473b;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        .welcome-subtitle {
+            color: #806a58;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* 主頁透明感按鈕容器 */
+        .welcome-btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 800px;
+        }
+
+        /* 霧面透明感按鈕樣式 (Glassmorphism) */
+        .glass-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #6e473b;
+            font-size: 1.15rem;
+            font-weight: bold;
+            padding: 16px 32px;
+            min-width: 200px;
+            background: rgba(255, 255, 255, 0.25); /* 半透明白 */
+            backdrop-filter: blur(8px); /* 模糊濾鏡，創造毛玻璃感 */
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.45); /* 白色半透明邊框 */
+            border-radius: 50px; /* 圓角膠囊造型 */
+            box-shadow: 0 8px 32px rgba(110, 71, 59, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* 按鈕懸停效果 */
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.45);
+            color: #4a2e26;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(110, 71, 59, 0.15);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .glass-btn:active {
+            transform: translateY(-1px);
+        }
+
+
+        /* ----------------------------------
+           🧱 原有網頁內容樣式
+        ------------------------------------- */
         header {
             background-color: #6e473b; /* 煙燻褐 */
             position: fixed;
@@ -48,14 +136,12 @@
             position: relative;
         }
 
-        /* 左上角三條線區塊組合 */
         .left-header-container {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        /* 三條線漢堡按鈕樣式 */
         .hamburger-btn {
             background: none;
             border: none;
@@ -75,17 +161,16 @@
         }
 
         nav .logo {
-            color: #ffffff; /* 白色 */
+            color: #ffffff;
             font-size: 1.2rem;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
-        /* 下拉式選單本體 */
         .dropdown-menu {
-            display: none; /* 預設隱藏 */
+            display: none;
             position: absolute;
-            top: 100%; /* 剛好在導覽列下方 */
+            top: 100%;
             left: 20px;
             background-color: #ffffff;
             border: 1px solid #e1d4c2;
@@ -96,7 +181,6 @@
             overflow: hidden;
         }
 
-        /* 當啟動 active 時顯示選單 */
         .dropdown-menu.active {
             display: block;
         }
@@ -121,7 +205,6 @@
             color: #6e473b;
         }
 
-        /* 右側錨點選單 */
         nav ul {
             display: flex;
             list-style: none;
@@ -132,7 +215,7 @@
         }
 
         nav ul li a {
-            color: #e1d4c2; /* 輕盈杏奶色 */
+            color: #e1d4c2;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
@@ -140,10 +223,9 @@
         }
 
         nav ul li a:hover {
-            color: #ffffff; /* 懸停轉為白色 */
+            color: #ffffff;
         }
 
-        /* 區塊通用樣式 */
         section {
             padding: 100px 20px 60px 20px; 
             max-width: 1100px;
@@ -157,17 +239,16 @@
         }
 
         h2 {
-            color: #6e473b; /* 煙燻褐 */
-            border-bottom: 3px solid #e1d4c2; /* 杏奶色底線 */
+            color: #6e473b;
+            border-bottom: 3px solid #e1d4c2;
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-size: 2rem;
         }
 
-        /* 子類別標題樣式 */
         .category-title {
-            background-color: #e1d4c2; /* 杏奶色襯底 */
-            color: #6e473b; /* 煙燻褐 */
+            background-color: #e1d4c2;
+            color: #6e473b;
             padding: 8px 18px;
             border-radius: 6px;
             display: inline-block;
@@ -175,10 +256,9 @@
             font-weight: bold;
             margin-top: 30px;
             margin-bottom: 20px;
-            border-left: 5px solid #a78d78; /* 燕麥灰左邊條 */
+            border-left: 5px solid #a78d78;
         }
 
-        /* 教材卡片排版架構 */
         .card-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -186,15 +266,13 @@
             margin-bottom: 40px;
         }
 
-        /* 卡片本體 */
         .card {
-            background: #ffffff; /* 純白卡片 */
+            background: #ffffff;
             padding: 25px;
             border-radius: 12px; 
             box-shadow: 0 4px 15px rgba(110, 71, 59, 0.06); 
-            border-top: 5px solid #e1d4c2; /* 杏奶色卡片頂條 */
+            border-top: 5px solid #e1d4c2;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            
             display: flex;
             flex-direction: column;
             justify-content: space-between; 
@@ -203,23 +281,20 @@
         .card:hover {
             transform: translateY(-5px); 
             box-shadow: 0 8px 25px rgba(110, 71, 59, 0.12);
-            border-top-color: #a78d78; /* 懸停時邊條轉燕麥灰 */
+            border-top-color: #a78d78;
         }
 
-        /* 卡片上半部文字區 */
         .card-content {
             margin-bottom: 25px;
         }
 
-        /* 放大卡片標題 */
         .card h3 {
             margin-bottom: 12px;
-            color: #6e473b; /* 煙燻褐 */
+            color: #6e473b;
             font-size: 1.4rem; 
             line-height: 1.4;
         }
 
-        /* 卡片下半部按鈕區（預設彈性排版） */
         .card-actions {
             display: flex;
             flex-wrap: wrap;
@@ -227,7 +302,6 @@
             margin-top: auto; 
         }
 
-        /* 針對多按鈕卡片的 Grid 排版（限定一行兩個） */
         .grid-actions {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -235,16 +309,15 @@
             margin-top: auto;
         }
 
-        /* 統一按鈕樣式 */
         .btn {
             display: inline-block;
-            background-color: #6e473b; /* 顏色全面統一為煙燻褐 */
+            background-color: #6e473b;
             color: #ffffff;
             padding: 12px 18px; 
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 1.15rem; /* 大字體 */
+            font-size: 1.15rem;
             letter-spacing: 0.8px; 
             transition: background 0.3s;
             text-align: center;
@@ -253,20 +326,18 @@
         }
 
         .btn:hover {
-            background-color: #a78d78; /* 懸停統一轉為燕麥灰 */
+            background-color: #a78d78;
         }
 
-        /* 特教班區塊採用過渡色背景 */
         .bg-transition {
-            background-color: #fcfbfa; /* 極淺燕麥暖白 */
+            background-color: #fcfbfa;
             border-top: 1px solid #e1d4c2;
             border-bottom: 1px solid #e1d4c2;
         }
 
-        /* 頁尾 */
         footer {
-            background-color: #6e473b; /* 煙燻褐 */
-            color: #e1d4c2; /* 杏奶色 */
+            background-color: #6e473b;
+            color: #e1d4c2;
             text-align: center;
             padding: 25px;
             font-size: 0.9rem;
@@ -290,15 +361,37 @@
             color: #e1d4c2;
         }
 
-        /* 手機板適應性微調 */
         @media (max-width: 768px) {
             nav ul {
-                display: none; /* 在小螢幕隱藏右側重複的導覽文字，使畫面乾淨 */
+                display: none;
+            }
+            .welcome-title {
+                font-size: 2.2rem;
+            }
+            .welcome-btn-group {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            .glass-btn {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1 class="welcome-title">歡迎來到周一婷的網站</h1>
+        <p class="welcome-subtitle">特教素養導向教材與教學成果分享</p>
+        
+        <div class="welcome-btn-group">
+            <button class="glass-btn" id="enterSiteBtn">進入教材存放處</button>
+            <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="glass-btn">進入互動小遊戲</a>
+            <button class="glass-btn" id="goToEmailBtn">聯絡一婷老師</button>
+        </div>
+    </div>
+
 
     <header>
         <nav>
@@ -431,13 +524,31 @@
         <div class="email-info">聯絡信箱：<a href="mailto:zyt709@gmail.com">zyt709@gmail.com</a></div>
     </footer>
 
+
     <script>
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const enterSiteBtn = document.getElementById('enterSiteBtn');
+        const goToEmailBtn = document.getElementById('goToEmailBtn');
         const menuBtn = document.getElementById('menuBtn');
         const dropdownMenu = document.getElementById('dropdownMenu');
 
-        // 點擊三條線按鈕切換選單狀態
+        // 邏輯 1：點擊「進入教材存放處」
+        enterSiteBtn.addEventListener('click', () => {
+            welcomeScreen.classList.add('hide');
+        });
+
+        // 邏輯 2：點擊「聯絡一婷老師」跳轉到最底，並隱藏歡迎頁
+        goToEmailBtn.addEventListener('click', () => {
+            welcomeScreen.classList.add('hide');
+            // 延遲一下讓歡迎頁滑開後，再進行平滑滾動至頁尾
+            setTimeout(() => {
+                document.getElementById('web-footer').scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        });
+
+        // 邏輯 3：點擊左上角三條線按鈕切換下拉選單
         menuBtn.addEventListener('click', function(e) {
-            e.stopPropagation(); // 防止點擊事件泡到 document
+            e.stopPropagation();
             dropdownMenu.classList.toggle('active');
         });
 
