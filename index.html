@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>教學檔案 | 周一婷</title>
     <!-- 引入開源高質感圓體字型 -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Chukuai&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
 
-        /* 基本樣式設定 */
+        /* 基本全局樣式與重置 */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -26,10 +26,11 @@
             color: #6e473b; /* 煙燻褐 */
             background-color: #ffffff;
             overflow-x: hidden;
+            -webkit-text-size-adjust: 100%; /* 防止 iOS 轉向時字體自動放大 */
         }
 
         /* ----------------------------------
-           ✨ 歡迎主頁樣式 (Landing Page)
+           ✨ 歡迎主頁樣式 (跨裝置兼容 RWD)
         ------------------------------------- */
         .welcome-screen {
             position: fixed;
@@ -37,7 +38,6 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            /* 採用溫潤的杏奶色到暖褐色的高質感漸層 */
             background: linear-gradient(135deg, #f5efe6 0%, #e1d4c2 50%, #a78d78 100%);
             display: flex;
             flex-direction: column;
@@ -46,10 +46,9 @@
             z-index: 2000;
             transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
             text-align: center;
-            padding: 20px;
+            padding: 24px;
         }
 
-        /* 當點擊進入後，主頁向上滑出並淡出 */
         .welcome-screen.hide {
             transform: translateY(-100vh);
             opacity: 0;
@@ -58,30 +57,33 @@
 
         .welcome-title {
             color: #6e473b;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             letter-spacing: 2px;
             text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+            max-width: 90%;
         }
 
         .welcome-subtitle {
             color: #806a58;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+            font-size: 1.25rem;
+            margin-bottom: 48px;
             letter-spacing: 1px;
+            max-width: 90%;
         }
 
-        /* 主頁按鈕組 */
+        /* 主頁按鈕組 RWD */
         .welcome-btn-group {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
-            max-width: 800px;
+            width: 100%;
+            max-width: 720px;
         }
 
-        /* 霧面透明感按鈕樣式 (Glassmorphism) */
+        /* 霧面透明感按鈕樣式 */
         .glass-btn {
             display: inline-block;
             text-decoration: none;
@@ -89,12 +91,13 @@
             font-size: 1.15rem;
             font-weight: bold;
             padding: 16px 32px;
-            min-width: 200px;
-            background: rgba(255, 255, 255, 0.3); /* 半透明白 */
-            backdrop-filter: blur(8px); /* 模糊濾鏡 */
+            flex: 1;
+            min-width: 220px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.5); /* 白色半透明邊框 */
-            border-radius: 50px; /* 膠囊造型 */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
             box-shadow: 0 8px 32px rgba(110, 71, 59, 0.08);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             cursor: pointer;
@@ -110,7 +113,7 @@
         }
 
         /* ----------------------------------
-           🧱 原有網頁內容與內頁按鈕優化
+           🧱 主要網頁基礎排版 (網頁頂部導覽列)
         ------------------------------------- */
         header {
             background-color: #6e473b;
@@ -127,14 +130,14 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 15px 24px;
             position: relative;
         }
 
         .left-header-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .hamburger-btn {
@@ -143,8 +146,8 @@
             color: #ffffff;
             font-size: 1.6rem;
             cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 6px 10px;
+            border-radius: 6px;
             transition: background 0.3s;
             display: flex;
             align-items: center;
@@ -160,13 +163,15 @@
             font-size: 1.2rem;
             font-weight: bold;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
+        /* 下拉選單 */
         .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
-            left: 20px;
+            left: 24px;
             background-color: #ffffff;
             border: 1px solid #e1d4c2;
             border-radius: 8px;
@@ -184,7 +189,7 @@
             display: block;
             color: #6e473b;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 14px 20px;
             font-size: 1rem;
             font-weight: bold;
             border-bottom: 1px solid #f5efe6;
@@ -200,13 +205,14 @@
             color: #6e473b;
         }
 
+        /* 右側桌面端導覽列連結 */
         nav ul {
             display: flex;
             list-style: none;
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 24px;
         }
 
         nav ul li a {
@@ -214,31 +220,35 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            white-space: nowrap;
         }
 
         nav ul li a:hover {
             color: #ffffff;
         }
 
+        /* ----------------------------------
+           📦 內頁內容區塊佈局 (響應式 Grid)
+        ------------------------------------- */
         section {
-            padding: 100px 20px 60px 20px; 
-            max-width: 1100px;
+            padding: 60px 24px; 
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-intro {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 120px 20px 20px 20px;
+            padding: 140px 24px 20px 24px;
         }
 
         h2 {
             color: #6e473b;
             border-bottom: 3px solid #e1d4c2;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 2rem;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            font-size: 2.2rem;
         }
 
         .category-title {
@@ -247,25 +257,27 @@
             padding: 8px 18px;
             border-radius: 6px;
             display: inline-block;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            margin-bottom: 24px;
             border-left: 5px solid #a78d78;
         }
 
+        /* 核心自適應卡片容器結構 */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            /* 根據螢幕尺寸自動計算分配 1、2 還是 3 欄 */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
         }
 
         .card {
             background: #ffffff;
-            padding: 25px;
-            border-radius: 12px; 
-            box-shadow: 0 4px 15px rgba(110, 71, 59, 0.06); 
+            padding: 28px;
+            border-radius: 14px; 
+            box-shadow: 0 4px 18px rgba(110, 71, 59, 0.05); 
             border-top: 5px solid #e1d4c2;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             display: flex;
@@ -274,22 +286,23 @@
         }
 
         .card:hover {
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 25px rgba(110, 71, 59, 0.12);
+            transform: translateY(-6px); 
+            box-shadow: 0 10px 30px rgba(110, 71, 59, 0.12);
             border-top-color: #a78d78;
         }
 
         .card-content {
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .card h3 {
             margin-bottom: 12px;
             color: #6e473b;
-            font-size: 1.4rem; 
+            font-size: 1.45rem; 
             line-height: 1.4;
         }
 
+        /* 內頁按鈕區排版：彈性適應 */
         .card-actions {
             display: flex;
             flex-wrap: wrap;
@@ -304,29 +317,29 @@
             margin-top: auto;
         }
 
-        /* 內頁教材存放處按鈕：同步升級為極具質感的透明玻璃感 */
+        /* 內頁透明玻璃感按鈕設計 */
         .btn {
             display: inline-block;
-            background-color: rgba(110, 71, 59, 0.08); /* 淡淡的煙燻褐透明底色 */
+            background-color: rgba(110, 71, 59, 0.06); 
             color: #6e473b;
-            padding: 12px 18px; 
+            padding: 12px 16px; 
             text-decoration: none;
-            border: 1px solid rgba(110, 71, 59, 0.2); /* 煙燻褐半透明邊框 */
+            border: 1px solid rgba(110, 71, 59, 0.18); 
             border-radius: 8px;
             font-weight: bold;
-            font-size: 1.15rem;
-            letter-spacing: 0.8px; 
-            backdrop-filter: blur(4px); /* 微毛玻璃效果 */
+            font-size: 1.1rem;
+            letter-spacing: 0.5px; 
+            backdrop-filter: blur(4px); 
             -webkit-backdrop-filter: blur(4px);
             transition: all 0.3s ease;
             text-align: center;
             flex: 1; 
-            min-width: 105px; 
+            min-width: 110px;
         }
 
         .btn:hover {
-            background-color: #6e473b; /* 移上去後填滿變穩重的煙燻褐 */
-            color: #ffffff;            /* 文字翻白 */
+            background-color: #6e473b; 
+            color: #ffffff;            
             border-color: #6e473b;
             box-shadow: 0 4px 12px rgba(110, 71, 59, 0.2);
         }
@@ -341,14 +354,14 @@
             background-color: #6e473b;
             color: #e1d4c2;
             text-align: center;
-            padding: 25px;
-            font-size: 0.9rem;
+            padding: 35px 24px;
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
         }
 
         footer .email-info {
-            margin-top: 8px;
-            font-size: 0.95rem;
+            margin-top: 10px;
+            font-size: 1rem;
         }
 
         footer .email-info a {
@@ -363,20 +376,68 @@
             color: #e1d4c2;
         }
 
+        /* ----------------------------------
+           🖥️📱 各裝置層級中斷點適應 (Responsive Breakpoints)
+        ------------------------------------- */
+        
+        /* 平板尺寸端 (小於或等於 1024px) */
+        @media (max-width: 1024px) {
+            .welcome-title {
+                font-size: 2.6rem;
+            }
+            .section-intro {
+                padding-top: 120px;
+            }
+            section {
+                padding: 40px 24px;
+            }
+        }
+
+        /* 手機尺寸端 (小於或等於 768px) */
         @media (max-width: 768px) {
             nav ul {
-                display: none;
+                display: none; /* 手機板全隱藏右側重複列，一律用漢堡按鈕 */
             }
+            
             .welcome-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
+                line-height: 1.3;
             }
+            
+            .welcome-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 36px;
+            }
+
             .welcome-btn-group {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: column; /* 按鈕全面垂直化單欄排序 */
+                gap: 16px;
                 width: 100%;
             }
+
             .glass-btn {
                 width: 100%;
+                padding: 14px 20px;
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr; /* 卡片手機端 100% 滿版單欄 */
+                gap: 20px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+            
+            /* 行動版按鈕撐滿更好點擊 */
+            .card-actions .btn {
+                width: 100%;
+                flex: none;
             }
         }
     </style>
@@ -445,7 +506,7 @@
 
     <!-- 國中特教班 -->
     <div class="bg-transition">
-        <section id="jh-special" style="padding-top: 60px;">
+        <section id="jh-special">
             <div class="category-title">國中特教班</div>
             <div class="card-container">
                 <div class="card">
@@ -554,7 +615,7 @@
             }, 300);
         });
 
-        // 邏輯 3：左上角選單控制
+        // 邏輯 3：左上角選單控制（防止手機平板端點選衝突）
         menuBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
