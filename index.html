@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>教學檔案 | 周一婷</title>
+    <!-- 引入開源高質感圓體字型 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Chukuai&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
@@ -28,7 +29,7 @@
         }
 
         /* ----------------------------------
-           ✨ 全新歡迎主頁樣式 (Landing Page)
+           ✨ 歡迎主頁樣式 (Landing Page)
         ------------------------------------- */
         .welcome-screen {
             position: fixed;
@@ -42,7 +43,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 2000; /* 確保蓋在最上層 */
+            z-index: 2000;
             transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
             text-align: center;
             padding: 20px;
@@ -71,7 +72,7 @@
             letter-spacing: 1px;
         }
 
-        /* 主頁透明感按鈕容器 */
+        /* 主頁按鈕組 */
         .welcome-btn-group {
             display: flex;
             gap: 20px;
@@ -89,36 +90,30 @@
             font-weight: bold;
             padding: 16px 32px;
             min-width: 200px;
-            background: rgba(255, 255, 255, 0.25); /* 半透明白 */
-            backdrop-filter: blur(8px); /* 模糊濾鏡，創造毛玻璃感 */
+            background: rgba(255, 255, 255, 0.3); /* 半透明白 */
+            backdrop-filter: blur(8px); /* 模糊濾鏡 */
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.45); /* 白色半透明邊框 */
-            border-radius: 50px; /* 圓角膠囊造型 */
+            border: 1px solid rgba(255, 255, 255, 0.5); /* 白色半透明邊框 */
+            border-radius: 50px; /* 膠囊造型 */
             box-shadow: 0 8px 32px rgba(110, 71, 59, 0.08);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             cursor: pointer;
             text-align: center;
         }
 
-        /* 按鈕懸停效果 */
         .glass-btn:hover {
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.55);
             color: #4a2e26;
             transform: translateY(-5px);
             box-shadow: 0 12px 35px rgba(110, 71, 59, 0.15);
-            border-color: rgba(255, 255, 255, 0.7);
+            border-color: rgba(255, 255, 255, 0.8);
         }
-
-        .glass-btn:active {
-            transform: translateY(-1px);
-        }
-
 
         /* ----------------------------------
-           🧱 原有網頁內容樣式
+           🧱 原有網頁內容與內頁按鈕優化
         ------------------------------------- */
         header {
-            background-color: #6e473b; /* 煙燻褐 */
+            background-color: #6e473b;
             position: fixed;
             top: 0;
             width: 100%;
@@ -309,24 +304,31 @@
             margin-top: auto;
         }
 
+        /* 內頁教材存放處按鈕：同步升級為極具質感的透明玻璃感 */
         .btn {
             display: inline-block;
-            background-color: #6e473b;
-            color: #ffffff;
+            background-color: rgba(110, 71, 59, 0.08); /* 淡淡的煙燻褐透明底色 */
+            color: #6e473b;
             padding: 12px 18px; 
             text-decoration: none;
-            border-radius: 6px;
+            border: 1px solid rgba(110, 71, 59, 0.2); /* 煙燻褐半透明邊框 */
+            border-radius: 8px;
             font-weight: bold;
             font-size: 1.15rem;
             letter-spacing: 0.8px; 
-            transition: background 0.3s;
+            backdrop-filter: blur(4px); /* 微毛玻璃效果 */
+            -webkit-backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
             text-align: center;
             flex: 1; 
             min-width: 105px; 
         }
 
         .btn:hover {
-            background-color: #a78d78;
+            background-color: #6e473b; /* 移上去後填滿變穩重的煙燻褐 */
+            color: #ffffff;            /* 文字翻白 */
+            border-color: #6e473b;
+            box-shadow: 0 4px 12px rgba(110, 71, 59, 0.2);
         }
 
         .bg-transition {
@@ -381,8 +383,9 @@
 </head>
 <body>
 
+    <!-- ✨ 歡迎主頁區塊 -->
     <div class="welcome-screen" id="welcomeScreen">
-        <h1 class="welcome-title">歡迎來到周一婷的網站</h1>
+        <h1 class="welcome-title">一婷老師的教材分享站</h1>
         <p class="welcome-subtitle">特教素養導向教材與教學成果分享</p>
         
         <div class="welcome-btn-group">
@@ -393,6 +396,7 @@
     </div>
 
 
+    <!-- 🧱 主要網頁內容 -->
     <header>
         <nav>
             <div class="left-header-container">
@@ -419,6 +423,7 @@
         <p style="color: #a78d78;">以下為教育實習期間針對不同特教安置型態與學生需求所設計之素養導向教材。區分為國中資源班、國中特教班及高中綜職科，點擊下方按鈕即可直接檢視相關檔案。</p>
     </div>
 
+    <!-- 國中資源班 -->
     <section id="jh-resource">
         <div class="category-title">國中資源班</div>
         <div class="card-container">
@@ -438,6 +443,7 @@
         </div>
     </section>
 
+    <!-- 國中特教班 -->
     <div class="bg-transition">
         <section id="jh-special" style="padding-top: 60px;">
             <div class="category-title">國中特教班</div>
@@ -490,6 +496,7 @@
         </section>
     </div>
 
+    <!-- 高中綜職科 -->
     <section id="sh-vocational">
         <div class="category-title">高中綜職科</div>
         <div class="card-container">
@@ -519,12 +526,14 @@
         </div>
     </section>
 
+    <!-- 頁尾 -->
     <footer id="web-footer">
         <p>© 周一婷｜教學檔案存放處. All Rights Reserved.</p>
         <div class="email-info">聯絡信箱：<a href="mailto:zyt709@gmail.com">zyt709@gmail.com</a></div>
     </footer>
 
 
+    <!-- ⚙️ JavaScript 邏輯控制 -->
     <script>
         const welcomeScreen = document.getElementById('welcomeScreen');
         const enterSiteBtn = document.getElementById('enterSiteBtn');
@@ -537,22 +546,20 @@
             welcomeScreen.classList.add('hide');
         });
 
-        // 邏輯 2：點擊「聯絡一婷老師」跳轉到最底，並隱藏歡迎頁
+        // 邏輯 2：點擊「聯絡一婷老師」跳轉到最底
         goToEmailBtn.addEventListener('click', () => {
             welcomeScreen.classList.add('hide');
-            // 延遲一下讓歡迎頁滑開後，再進行平滑滾動至頁尾
             setTimeout(() => {
                 document.getElementById('web-footer').scrollIntoView({ behavior: 'smooth' });
             }, 300);
         });
 
-        // 邏輯 3：點擊左上角三條線按鈕切換下拉選單
+        // 邏輯 3：左上角選單控制
         menuBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
         });
 
-        // 點擊選單內的任何連結後，自動把選單收起來
         const menuItems = document.querySelectorAll('.menu-item');
         menuItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -560,7 +567,6 @@
             });
         });
 
-        // 點擊網頁其他地方時，也自動把選單收起來
         document.addEventListener('click', function() {
             dropdownMenu.classList.remove('active');
         });
