@@ -19,18 +19,18 @@
 
         body {
             line-height: 1.6;
-            color: #4a3e3d; /* 深木質咖 */
-            background-color: #fcfbfa; /* 暖白偏燕麥色 */
+            color: #6e473b; /* 煙燻褐作為主要文字色 */
+            background-color: #ffffff; /* 主背景採用白色 */
         }
 
         /* 固定在頂部的導覽列 */
         header {
-            background-color: #5c4033; 
+            background-color: #6e473b; /* 煙燻褐 */
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(92, 64, 51, 0.15);
+            box-shadow: 0 2px 8px rgba(110, 71, 59, 0.15);
         }
 
         nav {
@@ -43,7 +43,7 @@
         }
 
         nav .logo {
-            color: #f4f0ea; /* 杏仁白 */
+            color: #ffffff; /* 白色 */
             font-size: 1.2rem;
             font-weight: bold;
             letter-spacing: 1px;
@@ -59,7 +59,7 @@
         }
 
         nav ul li a {
-            color: #d7ccc8; /* 淺可可色 */
+            color: #e1d4c2; /* 輕盈杏奶色 */
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
@@ -67,12 +67,12 @@
         }
 
         nav ul li a:hover {
-            color: #e6a15c; /* 溫暖秋葉橘 */
+            color: #ffffff; /* 懸停轉為白色 */
         }
 
         /* 區塊通用樣式 */
         section {
-            padding: 120px 20px 60px 20px; 
+            padding: 100px 20px 60px 20px; 
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -84,8 +84,8 @@
         }
 
         h2 {
-            color: #5c4033;
-            border-bottom: 3px solid #d4a373; /* 焦糖金色底線 */
+            color: #6e473b; /* 煙燻褐 */
+            border-bottom: 3px solid #e1d4c2; /* 杏奶色底線 */
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-size: 2rem;
@@ -93,16 +93,16 @@
 
         /* 子類別標題樣式 */
         .category-title {
-            background-color: #dfd7cc; /* 溫柔的亞麻色襯底 */
-            color: #5c4033;
-            padding: 8px 15px;
+            background-color: #e1d4c2; /* 杏奶色襯底 */
+            color: #6e473b; /* 煙燻褐 */
+            padding: 8px 18px;
             border-radius: 6px;
             display: inline-block;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: bold;
             margin-top: 30px;
-            margin-bottom: 15px;
-            border-left: 5px solid #d4a373;
+            margin-bottom: 20px;
+            border-left: 5px solid #a78d78; /* 燕麥灰左邊條 */
         }
 
         /* 教材卡片排版架構 */
@@ -115,12 +115,12 @@
 
         /* 卡片本體 */
         .card {
-            background: white;
+            background: #ffffff; /* 純白卡片 */
             padding: 25px;
             border-radius: 12px; 
-            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.06); 
-            border-top: 5px solid #d4a373; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(110, 71, 59, 0.06); 
+            border-top: 5px solid #e1d4c2; /* 杏奶色卡片頂條 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             
             display: flex;
             flex-direction: column;
@@ -129,18 +129,19 @@
 
         .card:hover {
             transform: translateY(-5px); 
-            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.12);
+            box-shadow: 0 8px 25px rgba(110, 71, 59, 0.12);
+            border-top-color: #a78d78; /* 懸停時邊條轉燕麥灰 */
         }
 
         /* 卡片上半部文字區 */
         .card-content {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .card h3 {
             margin-bottom: 12px;
-            color: #6d4c41; 
-            font-size: 1.15rem;
+            color: #6e473b; /* 煙燻褐 */
+            font-size: 1.2rem;
             line-height: 1.4;
         }
 
@@ -152,48 +153,58 @@
             margin-top: auto; 
         }
 
-        /* 按鈕基本樣式 (預設為橘色：用於簡報) */
+        /* 按鈕基本樣式（用於簡報：深邃溫潤） */
         .btn {
             display: inline-block;
-            background-color: #e6a15c; 
-            color: white;
-            padding: 9px 15px;
+            background-color: #6e473b; /* 煙燻褐 */
+            color: #ffffff;
+            padding: 12px 18px; /* 加大襯距，增強點擊手感 */
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.95rem; /* 字體稍微放大 */
+            letter-spacing: 0.5px; /* 提升易讀性 */
             transition: background 0.3s;
             text-align: center;
             flex: 1; 
-            min-width: 75px;
+            min-width: 90px;
         }
 
         .btn:hover {
-            background-color: #cf8642;
+            background-color: #a78d78; /* 懸停轉燕麥灰 */
         }
 
-        /* 次要按鈕樣式 (灰色：用於學習單、課本) */
+        /* 按鈕樣式二（用於學習單、課本、講義：沉穩優雅） */
         .btn-secondary {
-            background-color: #8d7b70; 
+            background-color: #a78d78; /* 燕麥灰 */
+            color: #ffffff;
         }
 
         .btn-secondary:hover {
-            background-color: #726257;
+            background-color: #6e473b; /* 懸停轉煙燻褐 */
         }
 
-        /* 🎮 小遊戲按鈕樣式 (大地色系：厚實的焦糖巧克力棕) */
+        /* 按鈕樣式三（用於小遊戲：輕盈中性） */
         .btn-game {
-            background-color: #b07d62; 
+            background-color: #beb5a9; /* 亞麻棕 */
+            color: #ffffff;
         }
 
         .btn-game:hover {
-            background-color: #946349;
+            background-color: #a78d78; /* 懸停轉燕麥灰 */
+        }
+
+        /* 特教班區塊採用過渡色背景 */
+        .bg-transition {
+            background-color: #fcfbfa; /* 極淺燕麥暖白 */
+            border-top: 1px solid #e1d4c2;
+            border-bottom: 1px solid #e1d4c2;
         }
 
         /* 頁尾 */
         footer {
-            background-color: #4a3e3d;
-            color: #d7ccc8;
+            background-color: #6e473b; /* 煙燻褐 */
+            color: #e1d4c2; /* 杏奶色 */
             text-align: center;
             padding: 25px;
             font-size: 0.9rem;
@@ -216,106 +227,107 @@
     
     <div class="section-intro">
         <h2>教學教材區</h2>
-        <p style="color: #6d4c41; margin-bottom: 10px;">
-        <p>以下為教育實習期間針對不同特教安置型態與學生需求所設計之素養導向教材。區分為國中資源班、國中特教班及高中綜職科，點擊下方按鈕即可直接檢視相關檔案。</p>
+        <p style="color: #a78d78;">以下為教育實習期間針對不同特教安置型態與學生需求所設計之素養導向教材。區分為國中資源班、國中特教班及高中綜職科，點擊下方按鈕即可直接檢視相關檔案。</p>
     </div>
 
     <!-- 國中資源班 -->
-    <section id="jh-resource" style="padding-top: 40px;">
-        <div class="category-title">🏫 國中資源班</div>
+    <section id="jh-resource">
+        <div class="category-title">國中資源班</div>
         <div class="card-container">
             <div class="card">
                 <div class="card-content">
                     <h3>段考總複習-解密闖關</h3>
-                    <p style="color: #8d7b70; font-size: 0.85rem; margin-top: 5px;">單元一</p>
+                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">單元一</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://drive.google.com/file/d/1HxEx1qcLT3PPNF7QpC74XqQx2KYDgccl/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
+                    <a href="https://drive.google.com/file/d/1HxEx1qcLT3PPNF7QpC74XqQx2KYDgccl/view?usp=sharing" target="_blank" class="btn">簡報</a>
                 </div>
             </div>
             
-            <div class="card" style="border-top: 5px dashed #d4a373; background: #fffdfa; justify-content: center; align-items: center; min-height: 160px;">
-                <p style="color: #8d7b70; font-style: italic;">未來教材儲備中...</p>
+            <div class="card" style="border-top: 5px dashed #beb5a9; background: #ffffff; justify-content: center; align-items: center; min-height: 160px; box-shadow: none;">
+                <p style="color: #beb5a9; font-style: italic;">未來教材儲備中...</p>
             </div>
         </div>
     </section>
 
     <!-- 國中特教班 -->
-    <section id="jh-special" style="padding-top: 20px; background-color: #f4f0ea;">
-        <div style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
-            <div class="category-title">🌱 國中特教班</div>
+    <div class="bg-transition">
+        <section id="jh-special" style="padding-top: 60px;">
+            <div class="category-title">國中特教班</div>
             <div class="card-container">
                 <div class="card">
                     <div class="card-content">
                         <h3>東南亞文化</h3>
-                        <p style="color: #8d7b70; font-size: 0.85rem; margin-top: 5px;">單元二</p>
+                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">單元二</p>
                     </div>
                     <div class="card-actions">
-                        <a href="https://drive.google.com/file/d/1Iw2gAtslyN18ne2sRAvr4sNn8kcAZWm4/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
-                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">🎮 小遊戲</a>
+                        <a href="https://drive.google.com/file/d/1Iw2gAtslyN18ne2sRAvr4sNn8kcAZWm4/view?usp=sharing" target="_blank" class="btn">簡報</a>
+                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">小遊戲</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-content">
                         <h3>能源認識</h3>
-                        <p style="color: #8d7b70; font-size: 0.85rem; margin-top: 5px;">單元三</p>
+                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">單元三</p>
                     </div>
                     <div class="card-actions">
-                        <a href="https://drive.google.com/file/d/1xt6aSO7rOJXMFyg4tt6l4j6vQzK30Ncm/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
-                        <a href="https://drive.google.com/file/d/1S6kiNyIJN-bS4D1necgIal2XouwtP76w/view?usp=sharing" target="_blank" class="btn btn-secondary">📝 學習單</a>
+                        <a href="https://drive.google.com/file/d/1xt6aSO7rOJXMFyg4tt6l4j6vQzK30Ncm/view?usp=sharing" target="_blank" class="btn">簡報</a>
+                        <a href="https://drive.google.com/file/d/1S6kiNyIJN-bS4D1necgIal2XouwtP76w/view?usp=sharing" target="_blank" class="btn btn-secondary">學習單</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-content">
                         <h3>我的餐盤-飲食六大類</h3>
-                        <p style="color: #8d7b70; font-size: 0.85rem; margin-top: 5px;">單元四</p>
+                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">單元四</p>
                     </div>
                     <div class="card-actions">
-                        <a href="https://drive.google.com/file/d/1Y1KnjDixPYki2-nx7GYxc9t0y1_1hi2e/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
-                        <a href="https://drive.google.com/file/d/13J2RWkYLBhjDAANkkxD3P5LiMR_UFvzA/view?usp=sharing" target="_blank" class="btn btn-secondary">📝 學習單</a>
-                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">🎮 小遊戲</a>
+                        <a href="https://drive.google.com/file/d/1Y1KnjDixPYki2-nx7GYxc9t0y1_1hi2e/view?usp=sharing" target="_blank" class="btn">簡報</a>
+                        <a href="https://drive.google.com/file/d/13J2RWkYLBhjDAANkkxD3P5LiMR_UFvzA/view?usp=sharing" target="_blank" class="btn btn-secondary">學習單</a>
+                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">小遊戲</a>
                     </div>
+                </div>
 
-                     <div class="card">
+                <div class="card">
                     <div class="card-content">
                         <h3>生活中的慣性</h3>
-                        <p style="color: #8d7b70; font-size: 0.85rem; margin-top: 5px;">單元五</p>
+                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">單元五</p>
                     </div>
                     <div class="card-actions">
-                        <a href="https://drive.google.com/file/d/1Vl-ZpFDBXUxFeUG1ckI8i56f2vl0ZZMR/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
-                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/="_blank" class="btn btn-game">🎮 小遊戲</a>
+                        <a href="https://drive.google.com/file/d/1Vl-ZpFDBXUxFeUG1ckI8i56f2vl0ZZMR/view?usp=sharing" target="_blank" class="btn">簡報</a>
+                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">小遊戲</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- 高中綜職科 -->
-    <section id="sh-vocational" style="padding-top: 40px; padding-bottom: 100px;">
-        <div class="category-title">💼 高中綜職科</div>
+    <section id="sh-vocational">
+        <div class="category-title">高中綜職科</div>
         <div class="card-container">
             <div class="card">
                 <div class="card-content">
                     <h3>國文</h3>
-                    <p style="color: #8d7b70; font-size: 0.85rem; margin-top: 5px;">便利商店（取自做工的人）</p>
+                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">便利商店（取自做工的人）</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://drive.google.com/file/d/1tky3invwxrrkAJbEPtlE5PX-9VTNbDxU/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
-                    <a href="https://drive.google.com/file/d/1yiJ9i_9iPd-6uqi_8B8Z_z8BxxzWkpqw/view?usp=sharing" target="_blank" class="btn btn-secondary">👩🏻‍🏫 教師用課本</a>
-                    <a href="https://drive.google.com/file/d/1Lyj7J25GiBb56rWeoXdBSzwFYadt1c91/view?usp=sharing" target="_blank" class="btn btn-secondary">📝 學生用課本</a>
-                    <a href="https://drive.google.com/file/d/1HQiDVS1DnYfu2RTEYPvBllhK4ZXa6mer/view?usp=sharing" target="_blank" class="btn btn-secondary">📔 學生用習作</a>
+                    <a href="https://drive.google.com/file/d/1tky3invwxrrkAJbEPtlE5PX-9VTNbDxU/view?usp=sharing" target="_blank" class="btn">簡報</a>
+                    <a href="https://drive.google.com/file/d/1yiJ9i_9iPd-6uqi_8B8Z_z8BxxzWkpqw/view?usp=sharing" target="_blank" class="btn btn-secondary">教師用本</a>
+                    <a href="https://drive.google.com/file/d/1Lyj7J25GiBb56rWeoXdBSzwFYadt1c91/view?usp=sharing" target="_blank" class="btn btn-secondary">學生用本</a>
+                    <a href="https://drive.google.com/file/d/1HQiDVS1DnYfu2RTEYPvBllhK4ZXa6mer/view?usp=sharing" target="_blank" class="btn btn-secondary">學生習作</a>
                 </div>
             </div>
-             <div class="card">
+            
+            <div class="card">
                 <div class="card-content">
                     <h3>英文</h3>
-                    <p style="color: #8d7b70; font-size: 0.85rem; margin-top: 5px;">麥當勞餐點認識及點餐對話</p>
+                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">麥當勞餐點認識及點餐對話</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://drive.google.com/file/d/19O2QiYqyW37i1S-UrenR-8zePvvgMLEJ/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
-                    <a href="https://drive.google.com/file/d/10hbsfVmF1xhXFkQjBG0UxXsl5wKaEjfm/view?usp=sharing" target="_blank" class="btn btn-secondary">📚 講義</a>
+                    <a href="https://drive.google.com/file/d/19O2QiYqyW37i1S-UrenR-8zePvvgMLEJ/view?usp=sharing" target="_blank" class="btn">簡報</a>
+                    <a href="https://drive.google.com/file/d/10hbsfVmF1xhXFkQjBG0UxXsl5wKaEjfm/view?usp=sharing" target="_blank" class="btn btn-secondary">講義</a>
                 </div>
             </div>
         </div>
