@@ -145,29 +145,37 @@
             line-height: 1.4;
         }
 
-        /* 卡片下半部按鈕區 */
+        /* 卡片下半部按鈕區（預設彈性排版） */
         .card-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px; /* 拉大按鈕之間的間距，防止誤觸 */
+            gap: 12px; 
             margin-top: auto; 
         }
 
-        /* 統一按鈕樣式與字體放大 */
+        /* 針對多按鈕卡片的 Grid 排版（限定一行兩個） */
+        .grid-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        /* 統一按鈕樣式 */
         .btn {
             display: inline-block;
             background-color: #6e473b; /* 顏色全面統一為煙燻褐 */
             color: #ffffff;
-            padding: 12px 18px; /* 寬裕的內襯距離 */
+            padding: 12px 18px; 
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 1.15rem; /* 字體顯著放大，更方便閱讀與點閱 */
-            letter-spacing: 0.8px; /* 微調字距提升清晰度 */
+            font-size: 1.15rem; /* 大字體 */
+            letter-spacing: 0.8px; 
             transition: background 0.3s;
             text-align: center;
             flex: 1; 
-            min-width: 105px; /* 設定最小寬度確保文字完美並排 */
+            min-width: 105px; 
         }
 
         .btn:hover {
@@ -217,15 +225,15 @@
             <div class="card">
                 <div class="card-content">
                     <h3>段考總複習-解密闖關</h3>
-                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">因數與倍數段考總複習</p>
+                    <p style="color: #806a58; font-size: 0.85rem; margin-top: 5px;">印術與倍數段考總複習</p>
                 </div>
                 <div class="card-actions">
                     <a href="https://drive.google.com/file/d/1HxEx1qcLT3PPNF7QpC74XqQx2KYDgccl/view?usp=sharing" target="_blank" class="btn">簡報</a>
                 </div>
             </div>
             
-            <div class="card" style="border-top: 5px dashed #beb5a9; background: #ffffff; justify-content: center; align-items: center; min-height: 160px; box-shadow: none;">
-                <p style="color: #beb5a9; font-style: italic;">未來教材儲備中...</p>
+            <div class="card" style="border-top: 5px dashed #a78d78; background: #ffffff; justify-content: center; align-items: center; min-height: 160px; box-shadow: none;">
+                <p style="color: #806a58; font-style: italic;">未來教材儲備中...</p>
             </div>
         </div>
     </section>
@@ -238,7 +246,7 @@
                 <div class="card">
                     <div class="card-content">
                         <h3>東南亞文化</h3>
-                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">認識泰國與越南</p>
+                        <p style="color: #806a58; font-size: 0.85rem; margin-top: 5px;">認識泰國與越南</p>
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1Iw2gAtslyN18ne2sRAvr4sNn8kcAZWm4/view?usp=sharing" target="_blank" class="btn">簡報</a>
@@ -249,7 +257,7 @@
                 <div class="card">
                     <div class="card-content">
                         <h3>能源認識</h3>
-                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">認識能源種類</p>
+                        <p style="color: #806a58; font-size: 0.85rem; margin-top: 5px;">認識能源種類</p>
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1xt6aSO7rOJXMFyg4tt6l4j6vQzK30Ncm/view?usp=sharing" target="_blank" class="btn">簡報</a>
@@ -260,7 +268,7 @@
                 <div class="card">
                     <div class="card-content">
                         <h3>我的餐盤</h3>
-                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">食物六大類及均衡飲食</p>
+                        <p style="color: #806a58; font-size: 0.85rem; margin-top: 5px;">食物六大類及均衡飲食</p>
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1Y1KnjDixPYki2-nx7GYxc9t0y1_1hi2e/view?usp=sharing" target="_blank" class="btn">簡報</a>
@@ -272,7 +280,7 @@
                 <div class="card">
                     <div class="card-content">
                         <h3>生活中的慣性</h3>
-                        <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">牛頓第一運動定律</p>
+                        <p style="color: #806a58; font-size: 0.85rem; margin-top: 5px;">牛頓第一運動定律</p>
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1Vl-ZpFDBXUxFeUG1ckI8i56f2vl0ZZMR/view?usp=sharing" target="_blank" class="btn">簡報</a>
@@ -290,12 +298,13 @@
             <div class="card">
                 <div class="card-content">
                     <h3>國文</h3>
-                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">便利商店（取自做工的人）</p>
+                    <p style="color: #806a58; font-size: 0.85rem; margin-top: 5px;">便利商店（取自做工的人）</p>
                 </div>
-                <div class="card-actions">
+                <!-- 改用 grid-actions 確保按鈕維持一行兩個、共兩行 -->
+                <div class="grid-actions">
                     <a href="https://drive.google.com/file/d/1tky3invwxrrkAJbEPtlE5PX-9VTNbDxU/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                    <a href="https://drive.google.com/file/d/1yiJ9i_9iPd-6uqi_8B8Z_z8BxxzWkpqw/view?usp=sharing" target="_blank" class="btn">教師用課本</a>
-                    <a href="https://drive.google.com/file/d/1Lyj7J25GiBb56rWeoXdBSzwFYadt1c91/view?usp=sharing" target="_blank" class="btn">學生用課本</a>
+                    <a href="https://drive.google.com/file/d/1yiJ9i_9iPd-6uqi_8B8Z_z8BxxzWkpqw/view?usp=sharing" target="_blank" class="btn">教師用本</a>
+                    <a href="https://drive.google.com/file/d/1Lyj7J25GiBb56rWeoXdBSzwFYadt1c91/view?usp=sharing" target="_blank" class="btn">學生用本</a>
                     <a href="https://drive.google.com/file/d/1HQiDVS1DnYfu2RTEYPvBllhK4ZXa6mer/view?usp=sharing" target="_blank" class="btn">學生習作</a>
                 </div>
             </div>
@@ -303,7 +312,7 @@
             <div class="card">
                 <div class="card-content">
                     <h3>英文</h3>
-                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">麥當勞餐點認識及點餐對話</p>
+                    <p style="color: #806a58; font-size: 0.85rem; margin-top: 5px;">麥當勞餐點認識及點餐對話</p>
                 </div>
                 <div class="card-actions">
                     <a href="https://drive.google.com/file/d/19O2QiYqyW37i1S-UrenR-8zePvvgMLEJ/view?usp=sharing" target="_blank" class="btn">簡報</a>
