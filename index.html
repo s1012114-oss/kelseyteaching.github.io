@@ -149,49 +149,29 @@
         .card-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px; /* 拉大按鈕之間的間距，防止誤觸 */
             margin-top: auto; 
         }
 
-        /* 按鈕基本樣式（用於簡報：深邃溫潤） */
+        /* 統一按鈕樣式與字體放大 */
         .btn {
             display: inline-block;
-            background-color: #6e473b; /* 煙燻褐 */
+            background-color: #6e473b; /* 顏色全面統一為煙燻褐 */
             color: #ffffff;
-            padding: 12px 18px; /* 加大襯距，增強點擊手感 */
+            padding: 12px 18px; /* 寬裕的內襯距離 */
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 0.95rem; /* 字體稍微放大 */
-            letter-spacing: 0.5px; /* 提升易讀性 */
+            font-size: 1.15rem; /* 字體顯著放大，更方便閱讀與點閱 */
+            letter-spacing: 0.8px; /* 微調字距提升清晰度 */
             transition: background 0.3s;
             text-align: center;
             flex: 1; 
-            min-width: 90px;
+            min-width: 105px; /* 設定最小寬度確保文字完美並排 */
         }
 
         .btn:hover {
-            background-color: #a78d78; /* 懸停轉燕麥灰 */
-        }
-
-        /* 按鈕樣式二（用於學習單、課本、講義：沉穩優雅） */
-        .btn-secondary {
-            background-color: #a78d78; /* 燕麥灰 */
-            color: #ffffff;
-        }
-
-        .btn-secondary:hover {
-            background-color: #6e473b; /* 懸停轉煙燻褐 */
-        }
-
-        /* 按鈕樣式三（用於小遊戲：輕盈中性） */
-        .btn-game {
-            background-color: #beb5a9; /* 亞麻棕 */
-            color: #ffffff;
-        }
-
-        .btn-game:hover {
-            background-color: #a78d78; /* 懸停轉燕麥灰 */
+            background-color: #a78d78; /* 懸停統一轉為燕麥灰 */
         }
 
         /* 特教班區塊採用過渡色背景 */
@@ -237,7 +217,7 @@
             <div class="card">
                 <div class="card-content">
                     <h3>段考總複習-解密闖關</h3>
-                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">印術與倍數段考總複習</p>
+                    <p style="color: #beb5a9; font-size: 0.85rem; margin-top: 5px;">因數與倍數段考總複習</p>
                 </div>
                 <div class="card-actions">
                     <a href="https://drive.google.com/file/d/1HxEx1qcLT3PPNF7QpC74XqQx2KYDgccl/view?usp=sharing" target="_blank" class="btn">簡報</a>
@@ -262,7 +242,7 @@
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1Iw2gAtslyN18ne2sRAvr4sNn8kcAZWm4/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">小遊戲</a>
+                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn">小遊戲</a>
                     </div>
                 </div>
 
@@ -273,7 +253,7 @@
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1xt6aSO7rOJXMFyg4tt6l4j6vQzK30Ncm/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                        <a href="https://drive.google.com/file/d/1S6kiNyIJN-bS4D1necgIal2XouwtP76w/view?usp=sharing" target="_blank" class="btn btn-secondary">學習單</a>
+                        <a href="https://drive.google.com/file/d/1S6kiNyIJN-bS4D1necgIal2XouwtP76w/view?usp=sharing" target="_blank" class="btn">學習單</a>
                     </div>
                 </div>
 
@@ -284,8 +264,8 @@
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1Y1KnjDixPYki2-nx7GYxc9t0y1_1hi2e/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                        <a href="https://drive.google.com/file/d/13J2RWkYLBhjDAANkkxD3P5LiMR_UFvzA/view?usp=sharing" target="_blank" class="btn btn-secondary">學習單</a>
-                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">小遊戲</a>
+                        <a href="https://drive.google.com/file/d/13J2RWkYLBhjDAANkkxD3P5LiMR_UFvzA/view?usp=sharing" target="_blank" class="btn">學習單</a>
+                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn">小遊戲</a>
                     </div>
                 </div>
 
@@ -296,7 +276,7 @@
                     </div>
                     <div class="card-actions">
                         <a href="https://drive.google.com/file/d/1Vl-ZpFDBXUxFeUG1ckI8i56f2vl0ZZMR/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn btn-game">小遊戲</a>
+                        <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="btn">小遊戲</a>
                     </div>
                 </div>
             </div>
@@ -314,9 +294,9 @@
                 </div>
                 <div class="card-actions">
                     <a href="https://drive.google.com/file/d/1tky3invwxrrkAJbEPtlE5PX-9VTNbDxU/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                    <a href="https://drive.google.com/file/d/1yiJ9i_9iPd-6uqi_8B8Z_z8BxxzWkpqw/view?usp=sharing" target="_blank" class="btn btn-secondary">教師用本</a>
-                    <a href="https://drive.google.com/file/d/1Lyj7J25GiBb56rWeoXdBSzwFYadt1c91/view?usp=sharing" target="_blank" class="btn btn-secondary">學生用本</a>
-                    <a href="https://drive.google.com/file/d/1HQiDVS1DnYfu2RTEYPvBllhK4ZXa6mer/view?usp=sharing" target="_blank" class="btn btn-secondary">學生習作</a>
+                    <a href="https://drive.google.com/file/d/1yiJ9i_9iPd-6uqi_8B8Z_z8BxxzWkpqw/view?usp=sharing" target="_blank" class="btn">教師用本</a>
+                    <a href="https://drive.google.com/file/d/1Lyj7J25GiBb56rWeoXdBSzwFYadt1c91/view?usp=sharing" target="_blank" class="btn">學生用本</a>
+                    <a href="https://drive.google.com/file/d/1HQiDVS1DnYfu2RTEYPvBllhK4ZXa6mer/view?usp=sharing" target="_blank" class="btn">學生習作</a>
                 </div>
             </div>
             
@@ -327,7 +307,7 @@
                 </div>
                 <div class="card-actions">
                     <a href="https://drive.google.com/file/d/19O2QiYqyW37i1S-UrenR-8zePvvgMLEJ/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                    <a href="https://drive.google.com/file/d/10hbsfVmF1xhXFkQjBG0UxXsl5wKaEjfm/view?usp=sharing" target="_blank" class="btn btn-secondary">講義</a>
+                    <a href="https://drive.google.com/file/d/10hbsfVmF1xhXFkQjBG0UxXsl5wKaEjfm/view?usp=sharing" target="_blank" class="btn">講義</a>
                 </div>
             </div>
         </div>
