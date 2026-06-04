@@ -87,7 +87,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(110, 71, 59, 0.15);
             width: 220px;
-            z-index: 1001;
+            z-index: 1011;
             overflow: hidden;
         }
 
@@ -297,20 +297,17 @@
 
     <header>
         <nav>
-            <!-- 左上角功能選單區塊（包含三條線與標題） -->
             <div class="left-header-container">
                 <button class="hamburger-btn" id="menuBtn" title="開啟選單">☰</button>
                 <div class="logo">周一婷｜教學檔案存放處</div>
             </div>
 
-            <!-- 下拉式選單內容 -->
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#jh-resource" class="menu-item">📁 教材存放區</a>
-                <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="menu-item">🎮 互動小遊戲</a>
-                <a href="mailto:zyt709@gmail.com" class="menu-item">✉️ 聯絡信箱</a>
+                <a href="#jh-resource" class="menu-item">教材存放區</a>
+                <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="menu-item">互動小遊戲</a>
+                <a href="#web-footer" class="menu-item">聯絡信箱</a>
             </div>
 
-            <!-- 右側快速跳轉錨點 -->
             <ul>
                 <li><a href="#jh-resource">國中資源班</a></li>
                 <li><a href="#jh-special">國中特教班</a></li>
@@ -324,7 +321,6 @@
         <p style="color: #a78d78;">以下為教育實習期間針對不同特教安置型態與學生需求所設計之素養導向教材。區分為國中資源班、國中特教班及高中綜職科，點擊下方按鈕即可直接檢視相關檔案。</p>
     </div>
 
-    <!-- 國中資源班 -->
     <section id="jh-resource">
         <div class="category-title">國中資源班</div>
         <div class="card-container">
@@ -344,7 +340,6 @@
         </div>
     </section>
 
-    <!-- 國中特教班 -->
     <div class="bg-transition">
         <section id="jh-special" style="padding-top: 60px;">
             <div class="category-title">國中特教班</div>
@@ -397,7 +392,6 @@
         </section>
     </div>
 
-    <!-- 高中綜職科 -->
     <section id="sh-vocational">
         <div class="category-title">高中綜職科</div>
         <div class="card-container">
@@ -427,12 +421,11 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="web-footer">
         <p>© 周一婷｜教學檔案存放處. All Rights Reserved.</p>
         <div class="email-info">聯絡信箱：<a href="mailto:zyt709@gmail.com">zyt709@gmail.com</a></div>
     </footer>
 
-    <!-- JavaScript 控制下拉選單的開關 -->
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const dropdownMenu = document.getElementById('dropdownMenu');
