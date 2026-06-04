@@ -39,47 +39,84 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 12px 20px;
+            padding: 15px 20px;
+            position: relative;
         }
 
-        /* 左上角區塊：包含標題與快速連結選單 */
-        .left-menu-group {
+        /* 左上角三條線區塊組合 */
+        .left-header-container {
             display: flex;
-            flex-direction: column;
-            gap: 6px;
+            align-items: center;
+            gap: 15px;
         }
 
-        .left-menu-group .logo {
+        /* 三條線漢堡按鈕樣式 */
+        .hamburger-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger-btn:hover {
+            background-color: rgba(225, 212, 194, 0.2);
+        }
+
+        nav .logo {
             color: #ffffff; /* 白色 */
             font-size: 1.2rem;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
-        /* 快速連結選單樣式 */
-        .quick-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .quick-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-            padding: 4px 10px;
+        /* 下拉式選單本體 */
+        .dropdown-menu {
+            display: none; /* 預設隱藏 */
+            position: absolute;
+            top: 100%; /* 剛好在導覽列下方 */
+            left: 20px;
+            background-color: #ffffff;
             border: 1px solid #e1d4c2;
-            border-radius: 4px;
-            background-color: rgba(225, 212, 194, 0.15);
-            transition: all 0.3s;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(110, 71, 59, 0.15);
+            width: 220px;
+            z-index: 1001;
+            overflow: hidden;
         }
 
-        .quick-links a:hover {
+        /* 當啟動 active 時顯示選單 */
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            color: #6e473b;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-bottom: 1px solid #f5efe6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
             background-color: #e1d4c2;
             color: #6e473b;
         }
 
+        /* 右側錨點選單 */
         nav ul {
             display: flex;
             list-style: none;
@@ -108,11 +145,10 @@
             margin: 0 auto;
         }
 
-        /* 因應頂部導覽列加高，微調上方間距 */
         .section-intro {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 140px 20px 20px 20px;
+            padding: 120px 20px 20px 20px;
         }
 
         h2 {
@@ -250,20 +286,9 @@
         }
 
         /* 手機板適應性微調 */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-            .left-menu-group {
-                align-items: center;
-            }
-            .quick-links {
-                justify-content: center;
-            }
-            .section-intro {
-                padding-top: 180px; /* 手機板選單變高，加高間距避免遮擋 */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* 在小螢幕隱藏右側重複的導覽文字，使畫面乾淨 */
             }
         }
     </style>
@@ -272,15 +297,20 @@
 
     <header>
         <nav>
-            <!-- 左上角功能選單區塊 -->
-            <div class="left-menu-group">
+            <!-- 左上角功能選單區塊（包含三條線與標題） -->
+            <div class="left-header-container">
+                <button class="hamburger-btn" id="menuBtn" title="開啟選單">☰</button>
                 <div class="logo">周一婷｜教學檔案存放處</div>
-                <div class="quick-links">
-                    <a href="#jh-resource">📁 教材存放區</a>
-                    <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank">🎮 互動小遊戲</a>
-                    <a href="mailto:zyt709@gmail.com">✉️ 聯絡信箱</a>
-                </div>
             </div>
+
+            <!-- 下拉式選單內容 -->
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#jh-resource" class="menu-item">📁 教材存放區</a>
+                <a href="https://jarvislee511.github.io/Kelsey-Teaching-Website/" target="_blank" class="menu-item">🎮 互動小遊戲</a>
+                <a href="mailto:zyt709@gmail.com" class="menu-item">✉️ 聯絡信箱</a>
+            </div>
+
+            <!-- 右側快速跳轉錨點 -->
             <ul>
                 <li><a href="#jh-resource">國中資源班</a></li>
                 <li><a href="#jh-special">國中特教班</a></li>
@@ -401,6 +431,31 @@
         <p>© 周一婷｜教學檔案存放處. All Rights Reserved.</p>
         <div class="email-info">聯絡信箱：<a href="mailto:zyt709@gmail.com">zyt709@gmail.com</a></div>
     </footer>
+
+    <!-- JavaScript 控制下拉選單的開關 -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // 點擊三條線按鈕切換選單狀態
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // 防止點擊事件泡到 document
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // 點擊選單內的任何連結後，自動把選單收起來
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                dropdownMenu.classList.remove('active');
+            });
+        });
+
+        // 點擊網頁其他地方時，也自動把選單收起來
+        document.addEventListener('click', function() {
+            dropdownMenu.classList.remove('active');
+        });
+    </script>
 
 </body>
 </html>
