@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 教學檔案 | 周一婷</title>
+    <title>教學檔案 | 周一婷</title>
     <style>
         /* 基本樣式設定 */
         * {
@@ -85,36 +85,56 @@
             font-size: 1.8rem;
         }
 
-        /* 教材卡片排版 */
+        /* 教材卡片排版架構 */
         .card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             margin-top: 25px;
         }
 
+        /* 卡片本體：使用 flex 確保同排等高、內容垂直分配 */
         .card {
             background: white;
             padding: 30px;
-            border-radius: 12px; /* 稍微圓潤一點更有親和力 */
-            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.08); /* 帶有大地色調的柔和陰影 */
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.08); 
             border-top: 5px solid #d4a373; /* 卡片上方焦糖金邊條 */
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* 讓標題在頂部，按鈕卡在底部 */
         }
 
         .card:hover {
-            transform: translateY(-5px); /* 滑鼠懸停時微幅飄起 */
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.15);
+        }
+
+        /* 卡片上半部文字區 */
+        .card-content {
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #6d4c41; /* 摩卡棕 */
+            font-size: 1.2rem;
         }
 
         .card p {
             font-size: 0.95rem;
             color: #5d534e;
             margin-bottom: 8px;
+        }
+
+        /* 卡片下半部按鈕區 */
+        .card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto; /* 強制推至卡片最底部 */
         }
 
         /* 按鈕樣式 (大地色系：秋葉橘與泥土棕) */
@@ -125,11 +145,12 @@
             padding: 9px 18px;
             text-decoration: none;
             border-radius: 6px;
-            margin-top: 15px;
-            margin-right: 10px;
             font-weight: bold;
             font-size: 0.9rem;
             transition: background 0.3s;
+            text-align: center;
+            flex: 1; /* 讓按鈕在寬度內等分 */
+            min-width: 80px;
         }
 
         .btn:hover {
@@ -158,10 +179,9 @@
 </head>
 <body>
 
-    <!-- 頂部選單 -->
     <header>
         <nav>
-            <div class="logo"> 周一婷的教學檔案存放處</div>
+            <div class="logo">💼 周一婷的教學檔案存放處</div>
             <ul>
                 <li><a href="#teaching">教學演示</a></li>
                 <li><a href="#curriculum">課程設計</a></li>
@@ -169,55 +189,81 @@
         </nav>
     </header>
     
-    <!-- 區塊一：教學演示 -->
-    <section id="teaching" style="background-color: #f4f0ea;"> <!-- 燕麥暖色背景 -->
-        <h2>教學演示教材</h2>
-        <p> 教育實習教學演示相關檔案，點擊按鈕可直接檢視或下載。</p>
+    <section id="teaching" style="background-color: #f4f0ea;"> <h2>教學演示教材</h2>
+        <p>教育實習教學演示相關檔案，點擊按鈕可直接檢視或下載。</p>
         
         <div class="card-container">
-            <!-- 卡片 1 -->
             <div class="card">
-                <h3>單元一：[資源班：段考總複習-解密闖關]</h3>
-                <a href="https://drive.google.com/file/d/1HxEx1qcLT3PPNF7QpC74XqQx2KYDgccl/view?usp=sharing" target="_blank" class="btn">簡報</a>
-
-            </div>
-            <!-- 卡片 2 -->
-            <div class="card">
-                <h3>單元二：[特教班：東南亞文化]</h3>
-                <a href="https://drive.google.com/file/d/1Iw2gAtslyN18ne2sRAvr4sNn8kcAZWm4/view?usp=sharing" target="_blank" class="btn">簡報</a>
+                <div class="card-content">
+                    <h3>資源班：段考總複習-解密闖關</h3>
+                    <p style="color: #8d7b70; font-size: 0.85rem;">單元一</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1HxEx1qcLT3PPNF7QpC74XqQx2KYDgccl/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
+                </div>
             </div>
 
-        <div class="card-container">
-            </div>
-            <!-- 卡片 3 -->
             <div class="card">
-                <h3>單元三：[特教班：能源認識]</h3>
-                <a href="https://drive.google.com/file/d/1xt6aSO7rOJXMFyg4tt6l4j6vQzK30Ncm/view?usp=sharing" target="_blank" class="btn">簡報</a>
-                <a href="https://drive.google.com/file/d/1S6kiNyIJN-bS4D1necgIal2XouwtP76w/view?usp=sharing" target="_blank" class="btn">學習單</a>
+                <div class="card-content">
+                    <h3>特教班：東南亞文化</h3>
+                    <p style="color: #8d7b70; font-size: 0.85rem;">單元二</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1Iw2gAtslyN18ne2sRAvr4sNn8kcAZWm4/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>特教班：能源認識</h3>
+                    <p style="color: #8d7b70; font-size: 0.85rem;">單元三</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1xt6aSO7rOJXMFyg4tt6l4j6vQzK30Ncm/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
+                    <a href="https://drive.google.com/file/d/1S6kiNyIJN-bS4D1necgIal2XouwtP76w/view?usp=sharing" target="_blank" class="btn btn-secondary">📝 學習單</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>特教班：我的餐盤-飲食六大類</h3>
+                    <p style="color: #8d7b70; font-size: 0.85rem;">單元四</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://drive.google.com/file/d/1Y1KnjDixPYki2-nx7GYxc9t0y1_1hi2e/view?usp=sharing" target="_blank" class="btn">📊 簡報</a>
+                    <a href="https://drive.google.com/file/d/13J2RWkYLBhjDAANkkxD3P5LiMR_UFvzA/view?usp=sharing" target="_blank" class="btn btn-secondary">📝 學習單</a>
+                    <a href="https://drive.google.com/file/d/1S6kiNyIJN-bS4D1necgIal2XouwtP76w/view?usp=sharing" target="_blank" class="btn btn-secondary">🎮 小遊戲</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 區塊二：課程設計 -->
     <section id="curriculum">
         <h2>多元課程設計成果</h2>
         <p>此區塊可放置您過去設計過的優良課程方案、學習單或學生優良作品集。</p>
         
         <div class="card-container">
             <div class="card">
-                <h3>學習單與評量工具</h3>
-                <p>設計符合雙向細目表之評量，以及引導學生思考的鷹架學習單。</p>
-                <a href="#" class="btn">👁️ 瀏覽作品集</a>
+                <div class="card-content">
+                    <h3>學習單與評量工具</h3>
+                    <p>設計符合雙向細目表之評量，以及引導學生思考的鷹架學習單。</p>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn">👁️ 瀏覽作品集</a>
+                </div>
             </div>
             <div class="card">
-                <h3>跨領域主題課程</h3>
-                <p>協同他科老師共同開發之素養課程，榮獲 [某某獎項] 或公開授課好評。</p>
-                <a href="#" class="btn">👁️ 瀏覽課程架構</a>
+                <div class="card-content">
+                    <h3>跨領域主題課程</h3>
+                    <p>協同他科老師共同開發之素養課程，榮獲優良獎項或公開授課好評。</p>
+                </div>
+                <div class="card-actions">
+                    <a href="#" class="btn">👁️ 瀏覽課程架構</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 頁尾 -->
     <footer>
         <p>© 周一婷的教學檔案存放處. All Rights Reserved.</p>
     </footer>
