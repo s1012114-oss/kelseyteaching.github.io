@@ -632,6 +632,50 @@
             dropdownMenu.classList.remove('active');
         });
     </script>
+    <script>
+        // 【新增】強制瀏覽器每次重新載入都回到最頂端
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
 
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const enterSiteBtn = document.getElementById('enterSiteBtn');
+        const goToEmailBtn = document.getElementById('goToEmailBtn');
+        const menuBtn = document.getElementById('menuBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // 邏輯 1：點擊「進入教材存放處」
+        enterSiteBtn.addEventListener('click', () => {
+            welcomeScreen.classList.add('hide');
+            window.scrollTo(0, 0); // 確保主頁滑開時，內頁也是從最上面看起
+        });
+
+        // 邏輯 2：點擊「聯絡一婷老師」跳轉到最底
+        goToEmailBtn.addEventListener('click', () => {
+            welcomeScreen.classList.add('hide');
+            setTimeout(() => {
+                document.getElementById('web-footer').scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        });
+
+        // 邏輯 3：左上角選單控制
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('active');
+        });
+
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                dropdownMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', function() {
+            dropdownMenu.classList.remove('active');
+        });
+    </script>
+    
 </body>
 </html>
